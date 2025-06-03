@@ -1,0 +1,307 @@
+:root {
+  --primary: #e63946;
+  --primary-dark: #c1121f;
+  --primary-light: #ff758f;
+  --secondary: #457b9d;
+  --dark: #1d3557;
+  --light: #f1faee;
+  --gray: #6c757d;
+  --light-gray: #f8f9fa;
+  --border-radius: 10px;
+  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#blood-group-summary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-top: 15px;
+  padding: 12px;
+  background-color: rgba(248, 249, 250, 0.7);
+  border-radius: var(--border-radius);
+}
+
+#blood-group-summary p {
+  margin: 4px 0;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--dark);
+}
+
+#blood-group-summary span {
+  margin-left: auto;
+  font-weight: 600;
+  padding-left: 8px;
+}
+
+.fas.fa-tint {
+  margin-right: 8px;
+  font-size: 1rem;
+}
+
+.blood-aplus { color: #FF6384; }
+.blood-bplus { color: #36A2EB; }
+.blood-oplus { color: #FFCE56; }
+.blood-abplus { color: #4BC0C0; }
+.blood-aminus { color: #9966FF; }
+.blood-bminus { color: #FF9F40; }
+.blood-ominus { color: #C9CBCF; }
+.blood-abminus { color: #4CAF50; }
+
+.donation-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.8rem;
+  margin-bottom: 2.5rem;
+}
+
+.stat-box {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 1.8rem;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.stat-box p {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary);
+  font-family: 'Inter', sans-serif;
+}
+
+.stat-box span {
+  color: var(--gray);
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.filter-search-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-search-container input,
+.filter-search-container select {
+  padding: 0.8rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--border-radius);
+  font-size: 0.95rem;
+  transition: var(--transition);
+  background-color: #f8fafc;
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-search-container input:focus,
+.filter-search-container select:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.1);
+  background-color: white;
+}
+
+.table-container {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 1.8rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--box-shadow);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.table-container h3 {
+  color: var(--dark);
+  margin: 0 0 1.5rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 400px;
+  max-width: 100%;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--border-radius);
+}
+
+#donation-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.95rem;
+}
+
+#donation-table th {
+  position: sticky;
+  top: 0;
+  background-color: #f8fafc;
+  color: #64748b;
+  font-weight: 600;
+  padding: 1rem;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  z-index: 10;
+}
+
+#donation-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+}
+
+#donation-table tr:last-child td {
+  border-bottom: none;
+}
+
+#donation-table tr:hover td {
+  background-color: #f8fafc;
+}
+
+.blood-group {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: white;
+}
+
+.blood-group.a-plus { background-color: #FF6384; }
+.blood-group.b-plus { background-color: #36A2EB; }
+.blood-group.o-plus { background-color: #FFCE56; }
+.blood-group.ab-plus { background-color: #4BC0C0; }
+.blood-group.a-minus { background-color: #9966FF; }
+.blood-group.b-minus { background-color: #FF9F40; }
+.blood-group.o-minus { background-color: #6B7280; }
+.blood-group.ab-minus { background-color: #10B981; }
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status.completed { 
+  background-color: #ECFDF5;
+  color: #059669;
+}
+.status.pending { 
+  background-color: #FEF3C7;
+  color: #D97706;
+}
+.status.urgent { 
+  background-color: #FEE2E2;
+  color: #DC2626;
+}
+
+.charts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.8rem;
+  margin-bottom: 2.5rem;
+}
+
+.chart-box {
+  background-color: white;
+  padding: 1.8rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.chart-box h3 {
+  margin: 0 0 1.5rem;
+  color: var(--dark);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+#monthlyDonationsChart {
+  width: 100%;
+  height: 300px;
+}
+
+.table-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.table-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.table-scroll::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+.table-scroll::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+@media (max-width: 768px) {
+  .donation-stats {
+      grid-template-columns: repeat(2, 1fr);
+  }
+  
+  #blood-group-summary {
+      grid-column: span 2;
+  }
+  
+  .charts-container {
+      grid-template-columns: 1fr;
+  }
+  
+  .filter-search-container {
+      flex-direction: column;
+      gap: 1rem;
+  }
+  
+  .filter-search-container input,
+  .filter-search-container select {
+      width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .donation-stats {
+      grid-template-columns: 1fr;
+  }
+  
+  #blood-group-summary {
+      grid-column: span 1;
+  }
+  
+  #blood-group-summary {
+      grid-template-columns: 1fr;
+  }
+}

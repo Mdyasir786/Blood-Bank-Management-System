@@ -1,0 +1,238 @@
+:root {
+    --primary: #e63946;
+    --primary-dark: #c1121f;
+    --primary-light: #ff758f;
+    --secondary: #457b9d;
+    --dark: #1d3557;
+    --light: #f1faee;
+    --gray: #6c757d;
+    --light-gray: #f8f9fa;
+    --dark-gray: #343a40;
+    --border-radius: 10px;
+    --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8fafc;
+    color: #334155;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  header {
+    background: linear-gradient(135deg, var(--primary), var(--dark));
+    color: white;
+    padding: 0 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    box-shadow: var(--box-shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: white;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  
+  .user-info span {
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+  
+  .logout-btn {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: var(--transition);
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+  
+  .logout-btn:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+  }
+  
+  .sidebar {
+    width: 280px;
+    background-color: white;
+    height: calc(100vh - 70px);
+    position: fixed;
+    top: 70px;
+    left: 0;
+    overflow-y: auto;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.03);
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1.5rem 0;
+    z-index: 900;
+  }
+  
+  .sidebar a {
+    display: flex;
+    align-items: center;
+    color: #64748b;
+    padding: 0.9rem 1.8rem;
+    text-decoration: none;
+    transition: var(--transition);
+    font-weight: 500;
+    font-size: 0.95rem;
+    gap: 1rem;
+    border-left: 4px solid transparent;
+  }
+  
+  .sidebar a:hover {
+    color: var(--primary);
+    background-color: rgba(230, 57, 70, 0.05);
+  }
+  
+  .sidebar a.active {
+    color: var(--primary);
+    background-color: rgba(230, 57, 70, 0.08);
+    border-left: 4px solid var(--primary);
+    font-weight: 600;
+  }
+  
+  .sidebar a i {
+    font-size: 1.1rem;
+    width: 24px;
+    text-align: center;
+  }
+  
+  .container {
+    margin-left: 280px;
+    margin-top: 70px;
+    padding: 2.5rem;
+    width: 1153px;
+    min-height: calc(100vh - 70px);
+    background-color: #f8fafc;
+  }
+  
+  .container h2 {
+    color: var(--dark);
+    margin: 0 0 2rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  
+  .container h2 i {
+    color: var(--primary);
+    font-size: 1.4rem;
+  }
+  
+  @media (max-width: 1200px) {
+    .sidebar {
+      width: 240px;
+    }
+    
+    .container {
+      margin-left: 240px;
+      width: calc(100% - 240px);
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .sidebar {
+      width: 220px;
+    }
+    
+    .container {
+      margin-left: 220px;
+      width: calc(100% - 220px);
+      padding: 2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    header {
+      padding: 1rem 1.5rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      height: auto;
+    }
+    
+    .user-info {
+      width: 100%;
+      justify-content: space-between;
+    }
+    
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+      top: auto;
+      box-shadow: none;
+      border-right: none;
+      padding: 1rem 0;
+      display: flex;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    
+    .sidebar::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .sidebar a {
+      padding: 0.8rem 1.2rem;
+      white-space: nowrap;
+      border-left: none;
+      border-bottom: 3px solid transparent;
+    }
+    
+    .sidebar a.active {
+      border-left: none;
+      border-bottom: 3px solid var(--primary);
+    }
+    
+    .container {
+      margin-left: 0;
+      margin-top: 0;
+      width: 100%;
+      padding: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    header {
+      padding: 1rem;
+    }
+    
+    header h1 {
+      font-size: 1.4rem;
+    }
+    
+    .container {
+      padding: 1.2rem;
+    }
+  }
